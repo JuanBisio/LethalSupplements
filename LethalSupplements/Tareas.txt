@@ -1,0 +1,19 @@
+Lo que le falta agregar a la web 
+
+1- Iconos al nav bar******** 
+2- Seccion de cards 
+3- Reformar las imagenes de Servicios 
+4- Marcas con las que trabajan
+5- Footer 
+6- Galeria con venta de productos
+
+
+
+GIT 
+echo "# LethalSupplements" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JuanBisio/LethalSupplements.git
+git push -u origin main
