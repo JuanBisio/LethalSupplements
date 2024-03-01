@@ -14,15 +14,38 @@ def cards(text_button, img) -> rx.Component:
     return rx.box(
         rx.button(
             text_button,
-            width='100%',
-            height='2.5em',
-            border_radius=Size.SMALL.value,
-            bg=Color.PRIMARY.value,
-            _hover={
-                'background_color': Color.DARK_RED.value,
-            },
+            # width='100%',
+            # height='2.5em',
+            # border_radius=Size.SMALL.value,
+            # bg=Color.DARK_RED.value,
+            # text_color='#cecece',
             on_click=ModalState.change,
-            margin='.7em'
+            margin='.7em',
+            # NEW
+            min_width='130px',
+            height='40px',
+            color='#fff',
+            padding=' 5px 10px',
+            font_weight='bold',
+            cursor='pointer',
+            transition='all 0.4s ease',
+            position='relative',
+            display='inline-block',
+            outline='none',
+            border_radius='5px',
+            border='none',
+            background_size='120% auto',
+            background_image='linear-gradient(315deg, #5F2C23 10%, #ba0210 75%)',
+
+            _hover={
+                # 'background_color': Color.DARK_RED.value,
+                'background_position': 'right center',
+                'transform':'scale(1.05)'
+            },
+            _active={
+                'top': '2px',
+            }
+
         ),
         rx.modal(
             rx.modal_overlay(
@@ -37,7 +60,7 @@ def cards(text_button, img) -> rx.Component:
                             on_click=ModalState.change,
                             bg=Color.DARK_RED.value,
                             _hover={
-                                'background_color': '#5F2C23DD'  
+                                'background_color': '#5F2C23DD'
                             },
 
                         )
@@ -50,12 +73,13 @@ def cards(text_button, img) -> rx.Component:
         display='flex',
         justify_content='center',
         align_items='end',
+        bg='#fff',
         background_image=img,
         background_position='center',
-        background_size='contain',
-        width='20em',
+        background_size='cover',
+        width='18em',
         height='30em',
-        border=Color.DARK_RED.value,
-        border_radius=Size.DEFAULT.value,
-        margin=Size.DEFAULT.value
+        margin=Size.DEFAULT.value,
+        border_radius='30px',
+        box_shadow='15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60)'
     )

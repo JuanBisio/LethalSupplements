@@ -12,8 +12,13 @@ from LethalSupplements.components.link_navbar import link_navbar
 def new_navbar(scroll) -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            drawer(),
-            rx.spacer(),
+            rx.image(
+                src='/LogoNegro.webp',
+                alt='Logo de Lethal Supplements',
+                width=Size.VERY_BIG.value,
+                height=Size.VERY_BIG.value,
+                border_radius=Size.BIG.value,
+            ),
             rx.text(
                 'LETHAL SUPPLEMENTS',
                 font_size= '2.3em',
@@ -23,7 +28,7 @@ def new_navbar(scroll) -> rx.Component:
                 padding_bottom='0px',
             ),
             rx.spacer(),
-            new_drawer(),
+            drawer(),
             width='100%',
         ),
         bg=scroll,

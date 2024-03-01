@@ -2,9 +2,10 @@ import reflex as rx
 from LethalSupplements.styles.styles import Color, Size, Font
 
 
-def spacer() -> rx.Component:
+def spacer(id='/') -> rx.Component:
     return rx.vstack(
         bg=Color.PRIMARY.value,
         width='100%',
-        height=Size.MEGA_BIG.value
+        height=Size.MEGA_BIG.value,
+        id=id
     )

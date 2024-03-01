@@ -1,22 +1,36 @@
 import reflex as rx
 from LethalSupplements.styles.styles import Color, Size, Font
 
-def link_navbar(text:str, href:str,) -> rx.Component:
+
+def link_navbar(text: str, href: str,on_click, is_external=False) -> rx.Component:
     return rx.link(
-                rx.button(
+        rx.button(
+            rx.box(
+                rx.span(
                     text,
-                    bg='none',
-                    _hover= {
-                        "background_color": Color.DARK_RED.value,
-                    },
-                    font_size='1.05em',
-                    font_family=Font.SUBTITLE.value
-
-
+                    class_name='actual-text'
                 ),
-                href= href,
-                is_external=True,
-                padding_x='.2em',
-                text_decoration='none',
-                
-            )
+                rx.span(
+                    text,
+                    class_name='hover-text',
+                    aria_hidden='true'
+                ),
+                class_name='button',
+                data_text="Awesome",
+                bg='none',
+                # font_size='1.05em',
+                font_family=Font.SUBTITLE.value,
+                font_weight='500',
+
+            ),
+            bg='none',
+            _hover={
+            },
+            on_click=on_click
+
+        ),
+        href=href,
+        is_external=is_external,
+        padding_x='.2em',
+        text_decoration='none',
+    )
